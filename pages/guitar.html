@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<title>Музыка</title>
+</head>
+
+<body>
+  <header>
+	<div class="div_step_logo"></div>
+	<img src="../images/logo.png" class="img_logo">
+	<div class="div_step_menu"></div>
+	<div class="div_menu_search">
+		<div class="div_menu">
+			<a href="../index.html"><div class="menu_main"><p class="p_menu">Главные новости</p></div></a>
+			<a href="rock.html"><div class="menu_genre"><p class="p_menu">Жанры музыки</p></div></a>
+			<a href="piano.html"><div class="menu_instrument_active"><p class="p_menu_active">Музыкальные инструменты</p></div></a>
+		</div>  
+		<div class="div_search_box">
+			<img src="../images/rss.png" class="img_icon">
+			<img src="../images/twitter.png" class="img_icon">
+			<div class="div_search"><img src="../images/search.gif" class="img_search"><p class="p_search"><font>Поиск</font></p></div>
+		</div>
+	</div>
+  </header>
+  <div class="div_left"></div>
+  <div class="div_right"></div>
+  <div class="div_center">
+		<nav>
+		<a href="piano.html"><div class="nav_piano"><p class="p_nav">Фортепиано</p></div></a>
+		<a href="guitar.html"><div class="nav_guitar_active"><p class="p_nav_active">Гитара</p></div></a>
+		</nav>
+		<hr class="hr_nav_guitar">
+		<div class="div_main">
+		<aside>
+			<img src="../images/vk.png" class="img_messenge"> 
+			<img src="../images/tg.png" class="img_messenge">
+			<img src="../images/tt.png" class="img_messenge">	
+			<img src="../images/ds.png" class="img_messenge">	
+			<img src="../images/sc.png" class="img_messenge">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка в Донецке</font></p></div>
+			<a href="https://filarmonia-donetsk.ru" target="_blank"><img src="../images/philharmonic.png" class="img_music"></a>
+			<a href="https://donbassopera.ru" target="_blank"><img src="../images/opera.png" class="img_music"></a>
+			<div class="div_aside"><p class="p_div_aside"><font>Музыкальные платформы</font></p></div>
+			<a href="https://vk.com/vkmusic" target="_blank" class="a_aside"><p class="p_aside"><font>VK Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.yandex.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Яндекс Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://m.ok.ru/okmusic" target="_blank" class="a_aside"><p class="p_aside"><font>Музыка в ОК</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.mts.ru" target="_blank" class="a_aside"><p class="p_aside"><font>МТС Music</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка на ТВ</font></p></div>
+			<a href="https://muz-tv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Муз-ТВ</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://tntmusic.ru" target="_blank" class="a_aside"><p class="p_aside"><font>ТНТ Music</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://musicboxtv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Music Box Russia</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Данные автора</font></p></div>
+			<p class="p_aside"><font>Пилипенко Юлия Александровна</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Группа ИС-23а</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Почта: <a class="a_email" href="mailto:julliyann@yandex.ru">julliyann@yandex.ru</a></font></p>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Календарь</font></p></div>
+			<div id="monthYear" class="monthYear"></div>
+				<table id="calendar">
+                <thead>
+                <tr>
+                <td>Пн</td>
+                <td>Вт</td>
+                <td>Ср</td>
+                <td>Чт</td>
+                <td>Пт</td>
+                <td>Сб</td>
+                <td>Вс</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+				<script>
+                function Calendar(id, year, month){
+				var Dlast = new Date(year, month + 1, 0).getDate(),
+				D = new Date(year, month, Dlast),
+				DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+				DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+				calendar = "<tr>";
+				
+				if (DNfirst != 0) {for (var i = 1; i < DNfirst; i++) calendar += "<td>";}
+				else {for (var i = 0; i < 6; i++) calendar += "<td>";}
+				var today = new Date();
+
+				for (var i = 1; i <= Dlast; i++) 
+				{
+					var currentDay = new Date(D.getFullYear(), D.getMonth(), i).getDay();
+					var classes = ['day'];
+
+					if (i == today.getDate() && D.getFullYear() == today.getFullYear() && D.getMonth() == today.getMonth()) 
+					{classes.push('today');}
+
+					calendar += '<td class="' + classes.join(' ') + '">' + i + '</td>';
+
+					if (currentDay == 0) {calendar += "<tr>";}
+				}
+
+				for (var i = DNlast; i < 7; i++) calendar += "<td>&nbsp;";
+				document.querySelector("#" + id + " tbody").innerHTML = calendar;
+				document.getElementById("monthYear").innerHTML =
+					D.toLocaleString("ru-RU", { month: "long" }).charAt(0).toUpperCase() +
+					D.toLocaleString("ru-RU", { month: "long" }).slice(1) +
+					" " + D.getFullYear();
+				}
+
+				Calendar("calendar", new Date().getFullYear(), new Date().getMonth());
+                </script>
+		</aside>
+		<section>
+			<p class="p_section">
+			<img src="../images/guitar.jpg" class="img_guitar">
+			<font>Гитара – наиболее популярный музыкальный инструмент в мире. Сегодня без неё не обходится ни один концерт живой музыки. 
+			Она хороша как в составе оркестра, бэнда или музыкальной группы, так и в одиночных упражнениях, где музыкант может получить 
+			удовольствие даже от игры наедине с самим собой.
+			</font></p><p class="p_section"><font>
+			В самом широком смысле любая гитара – это хордофон, звук получается в результате колебаний струны, натянутой между двумя 
+			точками. Такие изделия известны с древнейших времён. Они уже были в древнеегипетской цивилизации и даже раньше – в 
+			земледельческих средиземноморских культурах медного и бронзового века. Гитару историки музыкальных инструментов относят к 
+			семейству лютни, так как она имеет не только корпус, но и гриф, на котором струны зажимаются пальцами.
+			</font></p><p class="p_section"><font>
+			Предшественниками гитары считаются щипковые инструменты, которые на тот момент ещё не имели грифа: кифара и цитра. На них 
+			<img src="../images/guitar_kifara.jpg" class="img_guitar_kifara">
+			играли в Древнем Египте и Древней Греции, а чуть позже – и в Риме. С появлением длинной узкой шейки появилась необходимость 
+			в цельном резонаторе. Изначально его делали из пустотелых сосудов и других объёмных предметов: панциря черепахи, высушенных 
+			плодов тыквы или выдолбленных деревянных отрезков ствола. Деревянный корпус, составленный их верхней и нижней деки и боковин 
+			(обечаек) придумали в Древнем Китае в начале I тысячелетия нашей эры. Оттуда эта идея перекочевала в арабские страны, 
+			воплотившись в мавританской гитаре, а в VIII – IX веках пришла в Европу.
+			</font></p><p class="p_section"><font>
+			Своим названием гитара обязана латинскому языку как общепринятому в период Средневековья. Греческое слово «кифара», которое 
+			в Европе уже мало кто мог прочесть после крушения Западной Римской империи, в результате транслитировалось в латинское cithara. 
+			С течением времени латынь также претерпевала изменения – слово имело вид quitaire, и в романо-германских языках стало звучать 
+			как guitar.
+			</font></p><p class="p_section">
+			<img src="../images/guitar_picture.jpg" class="img_guitar_picture">
+			<font>В период позднего Средневековья и начала Нового времени центром развития музыки была Испания. Во времена Кордовского халифата 
+			здесь получила распространение мавританская гитара, а после реконкисты испанцы модернизировали её, придав форму, близкую к 
+			современной. У инструментов XV века было 5 парных струн, натягиваемых колками, расположенными на длинной головке. Уже к концу 
+			XVIII века складывается современный облик: гитара обзаводится шестью одинарными струнами, удобным корпусом с вырезами для 
+			лучшего удержания, а также круглым отверстием в верхней деке.
+			</font></p><p class="p_section"><font>
+			В России XVIII – XIX веков музыка была чрезвычайно популярна. Широкое распространение испанской гитары в Москве и Петербурге 
+			подтолкнуло отечественных музыкантов к созданию инструмента на испанской основе, но с российским колоритом. Также мастера 
+			использовали наработки англичан с их народными инструментами из рода цистр. Так появилась русская семиструнная гитара. Сегодня 
+			её иногда называют цыганской. Её строй отличается от привычной шестиструнной, а сферой применения на протяжении XIX и XX веков 
+			стал аккомпанемент при исполнении русских романсов. Сегодня русская гитара встречается реже, хотя продолжает использоваться 
+			некоторыми бардами и коллективами, исполняющими традиционную музыку.
+			</font></p><p class="p_section"><font>
+			В XIX веке музыкант и гитарный мастер Антонио Торрес изобрёл гитару современной конструкции и пропорций. Сегодня она называет 
+			классической, применяется как в академической музыке, так и при исполнении песен музыкантами-любителями в развлекательных 
+			целях. Акустическая гитара дошла до нас практически в неизменном виде. Она состоит из массивного корпуса, служащего 
+			<img src="../images/guitar_acoustic.jpg" class="img_guitar_acoustic">
+			резонатором, грифа, который крепится к корпусу с помощь специального винта, и головки, на которой расположены колки для 
+			натяжения струн. В акустической гитаре 19 ладов – металлических рёбер на накладке грифа, которые позволяют извлекать ноты с 
+			определённым интервалом. При этом если на классической гитаре от верхнего порожка до начала корпуса 12 ладов, то у появившейся 
+			позднее акустической – 14. На последней иногда присутствует вырез, позволяющий сыграть высокие ноты. Правильная поза для игры 
+			на классической гитаре (для правши) – спина ровная, левая нога на специальной подставке, гитара лежит изгибом корпуса на бедре 
+			левой ноги. Гриф поднят кверху на 45°. Известная большинству поза на правом колене с грифом, параллельным земле считается 
+			неакадемичной, «дворовой».
+			</font></p><p class="p_section"><font>
+			Когда в XX веке электричество начало своё победное шествие по планете, фабриканты музыкальных инструментов не могли обойти 
+			<img src="../images/guitar_electric.jpg" class="img_guitar_electric">
+			стороной возможность значительно усилить звук струн гитары с помощью технических устройств. В 1936 году впервые была создана 
+			«бабушка» электрогитары. Она имела алюминиевый корпус и пару звукоснимателей на электромагнитах. Благодаря круглой форме 
+			корпуса, больше похожей на банджо, и материалу, она получила прозвище «сковородка». Благодаря преобразованию акустических 
+			колебаний в электрические и действие усилителей электрогитаре не нужен резонатор – её корпус может быть самых разных форм, 
+			хотя чаще и делается похожим на акустическую гитару.
+			</font></p><p class="p_section"><font>
+			С помощью бас-гитары воспроизводится низкочастотный регистр при исполнении музыкальных произведений. На ней обычно 4 струны и 
+			более длинный гриф. Акустические варианты встречаются очень редко, так как низкие частоты слышны намного хуже при естественном 
+			резонансе корпуса. Во второй половине XX века некоторые басисты-виртуозы стали использовать безладовый бас, который позволял 
+			обойтись без фиксированного музыкального строя.
+			</font></p><p class="p_section"><font>
+			Самый лучший способ узнать гитару поближе – это купить и начать играть. Тогда история создания гитары станет вам намного ближе, 
+			а строки «Изгиб гитары жёлтой…» обретут особый смысл.
+			</font></p>
+		</section>
+		</div><p class="p_invisible">.</p>
+  <footer>
+	<p class="p_footer"><font>Курсовая работа по предмету "Веб-технологии"</font><br><font>Индивидуальная тема курсовой работы "Музыка"</font></p>
+  </footer>
+  </div>
+</body>
+
+</html>  
+ 

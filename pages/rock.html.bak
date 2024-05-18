@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<title>Музыка</title>
+</head>
+
+<body>
+  <header>
+	<div class="div_step_logo"></div>
+	<img src="../images/logo.png" class="img_logo">
+	<div class="div_step_menu"></div>
+	<div class="div_menu_search">
+		<div class="div_menu">
+			<a href="../index.html"><div class="menu_main"><p class="p_menu">Главные новости</p></div></a>
+			<a href="rock.html"><div class="menu_genre_active"><p class="p_menu_active">Жанры музыки</p></div></a>
+			<a href="piano.html"><div class="menu_instrument"><p class="p_menu">Музыкальные инструменты</p></div></a>
+		</div>  
+		<div class="div_search_box">
+			<img src="../images/rss.png" class="img_icon">
+			<img src="../images/twitter.png" class="img_icon">
+			<div class="div_search"><img src="../images/search.gif" class="img_search"><p class="p_search"><font>Поиск</font></p></div>
+		</div>
+	</div>
+  </header>
+  <div class="div_left"></div>
+  <div class="div_right"></div>
+  <div class="div_center">
+		<nav>
+		<a href="rock.html"><div class="nav_rock_rap_active"><p class="p_nav_active">Рок</p></div></a>
+		<a href="rap.html"><div class="nav_rock_rap"><p class="p_nav">Реп</p></div></a>
+		<a href="jazz.html"><div class="nav_jazz"><p class="p_nav">Джаз</p></div></a>
+		</nav>
+		<hr class="hr_nav_rock">
+		<div class="div_main">
+		<aside>
+			<img src="../images/vk.png" class="img_messenge"> 
+			<img src="../images/tg.png" class="img_messenge">
+			<img src="../images/tt.png" class="img_messenge">	
+			<img src="../images/ds.png" class="img_messenge">	
+			<img src="../images/sc.png" class="img_messenge">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка в Донецке</font></p></div>
+			<a href="https://filarmonia-donetsk.ru" target="_blank"><img src="../images/philharmonic.png" class="img_music"></a>
+			<a href="https://donbassopera.ru" target="_blank"><img src="../images/opera.png" class="img_music"></a>
+			<div class="div_aside"><p class="p_div_aside"><font>Музыкальные платформы</font></p></div>
+			<a href="https://vk.com/vkmusic" target="_blank" class="a_aside"><p class="p_aside"><font>VK Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.yandex.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Яндекс Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://m.ok.ru/okmusic" target="_blank" class="a_aside"><p class="p_aside"><font>Музыка в ОК</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.mts.ru" target="_blank" class="a_aside"><p class="p_aside"><font>МТС Music</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка на ТВ</font></p></div>
+			<a href="https://muz-tv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Муз-ТВ</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://tntmusic.ru" target="_blank" class="a_aside"><p class="p_aside"><font>ТНТ Music</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://musicboxtv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Music Box Russia</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Данные автора</font></p></div>
+			<p class="p_aside"><font>Пилипенко Юлия Александровна</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Группа ИС-23а</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Почта: <a class="a_email" href="mailto:julliyann@yandex.ru">julliyann@yandex.ru</a></font></p>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Календарь</font></p></div>
+			<div id="monthYear" class="monthYear"></div>
+				<table id="calendar">
+                <thead>
+                <tr>
+                <td>Пн</td>
+                <td>Вт</td>
+                <td>Ср</td>
+                <td>Чт</td>
+                <td>Пт</td>
+                <td>Сб</td>
+                <td>Вс</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+				<script>
+                function Calendar(id, year, month){
+				var Dlast = new Date(year, month + 1, 0).getDate(),
+				D = new Date(year, month, Dlast),
+				DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+				DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+				calendar = "<tr>";
+				
+				if (DNfirst != 0) {for (var i = 1; i < DNfirst; i++) calendar += "<td>";}
+				else {for (var i = 0; i < 6; i++) calendar += "<td>";}
+				var today = new Date();
+
+				for (var i = 1; i <= Dlast; i++) 
+				{
+					var currentDay = new Date(D.getFullYear(), D.getMonth(), i).getDay();
+					var classes = ['day'];
+
+					if (i == today.getDate() && D.getFullYear() == today.getFullYear() && D.getMonth() == today.getMonth()) 
+					{classes.push('today');}
+
+					calendar += '<td class="' + classes.join(' ') + '">' + i + '</td>';
+
+					if (currentDay == 0) {calendar += "<tr>";}
+				}
+
+				for (var i = DNlast; i < 7; i++) calendar += "<td>&nbsp;";
+				document.querySelector("#" + id + " tbody").innerHTML = calendar;
+				document.getElementById("monthYear").innerHTML =
+					D.toLocaleString("ru-RU", { month: "long" }).charAt(0).toUpperCase() +
+					D.toLocaleString("ru-RU", { month: "long" }).slice(1) +
+					" " + D.getFullYear();
+                </script>
+		</aside>
+		<section>
+			<p class="p_section">
+			<img src="../images/rock.jpg" class="img_rock">
+			<font>Название стиля произошло из английского языка. Переводится «rock», как «качать». Что вполне отражает суть 
+			музыкального направления. Ведь классический рок отличается особыми ритмами. Именно они придают стилю уникальность. 
+			Бас-гитара и ударные — это основа любого рок-коллектива. Они обеспечивают нужный ритм и энергию музыке.
+			</font></p><p class="p_section"><font>
+			Рок появился еще в 50 годах. На данный момент история музыкального направления насчитывает более 70 лет, она полна 
+			событиями и значимыми фактами. Родиной музыки стала Америка. Население страны объединяло в себе выходцев из разных стран: 
+			англичан, африканцев, итальянцев. Каждый из них нес часть собственной культуры, традиций и, конечно, мелодий. Именно 
+			смешение разноплановых стилей стало причиной рождения абсолютно новых направлений. Этому витку истории мы обязаны появлением 
+			блюза, джаза и, конечно, рока.
+			</font></p><p class="p_section"><font>
+			Основой рока всегда являлся протест. Бунтарями были не только рок-музыканты, но и почитатели нового направления. Так 
+			как новое направление произошло от смешения национальных ритмов афроамериканцев с мелодиями других народов, консервативное 
+			население того времени не слишком обращало внимание на зарождающуюся музыку. Они считали это «мелодиями рабов». Но в 
+			представителях молодого поколения рок-н-ролл нашел благодарных слушателей. Именно эта категория американцев вывела на сцену 
+			темнокожих исполнителей, сделала их звездами хит-парадов. Следом за этим новым течением заинтересовались и европейские 
+			музыканты. Последние начали экспериментировать с музыкальным направлением, значительно расширив его потенциал. Популярность 
+			рок-музыки стремительно возрастала. Энергия и протест, которыми были наполнены мелодии, вызывали бурный восторг у молодого 
+			поколения. Старшее поколение требовало запретить музыку, которая, по их мнению, развращала умы молодежи. 
+			</font></p><p class="p_section">
+			<img src="../images/rock_elvis.jpg" class="img_rock_elvis">
+			<font>Днем рождения рок-н-ролла можно считать выход песни «That’s All Right Mama». В пятидесятые годы прошлого века, молодой 
+			водитель грузовика Элвис Пресли, проникшись новым направлением, записал песню, сопровождаемую энергичным танцем. Именно это 
+			навсегда открыло сердца публики рок-н-роллу. Популярность Элвиса сформировалась мгновенно. Однако настоящим хитом стала песня 
+			«Rock Around The Clock», написанная провинциальным композитором Биллом Хейли. Запись с песней «Rock Around The Clock» была 
+			распродана тиражом 25 000 пластинок. Небывалые по тем временам цифры.
+			</font></p><p class="p_section"><font>
+			Новое направление формировало и новых звезд. Откровенная одежда, татуировки, скандалы и судебные процессы — вот, что 
+			демонстрировали новые звезды. Джим Винсент и Литтл Ричард придерживались принципов «живи быстро, умри молодым». Темнокожий 
+			музыкант Чебби Чеккер не только покорил сердца поклонников рок-н-ролла, но и подарил всем незабываемый танец твист. Европа не 
+			могла остаться в стороне от популярного музыкального направления. Клиф Ричард и Адам Фейт стали теми, кто привнес в 
+			классический рок-н-ролл немного «кокни» и тем самым обновили музыкальный стиль. Примерно в эти же годы произошло историческое 
+			знакомство Джона Леннона с Полом Маккартни. Но никто еще не подозревал, что в эти мгновения рождается настоящая легенда рок-н-ролла. 
+			</font></p><p class="p_section">
+			<img src="../images/rock_the_beatles.jpg" class="img_rock_the_beatles">
+			<font>В 1957 году была записана композиция «Rumble» гитариста Линка Рея, в которой впервые был использован эффект фузза на гитаре, 
+			от этой песни в какой-то мере происходят все «тяжёлые» жанры рок-музыки, в частности, хэви-метал и панк-рок. 1962 год 
+			ознаменовался первой популярной композицией Битлз. До этого они играли в небольших заведениях, не слишком хорошо зарабатывая. 
+			«Love Me Do» заняла всего 17 позицию в национальном хит-параде, однако стала отправной точкой для группы. Спустя короткое 
+			время уже весь мир стал поклонником уникальной четверки. Американский коллектив Beach Boys в 1963 году создает новое 
+			ответвление в рок-направлении. Соединив ангельское многоголосье и заводные ритмы рока, они продемонстрировали публике серф-рок. 
+			Это показало, что произведения в стиле рок могут быть и лирическими.
+			</font></p><p class="p_section"><font>
+			Джим Моррисон создал прообраз панк-рока. Экстравагантное поведение и эпатаж стали плотно связывать с определенным музыкальным 
+			направлением. В 1967 году Битлз выпускают свой лучший альбом «Sgt. Pepper’s Lonely Hearts Club Band». В это же время 
+			формируются другие статусные коллективы с новыми рок-направлениями. Deep Purple подарил слушателям хард рок, Pink Floyd 
+			порадовал фанатов арт-роком. 1969 год запомнился проведением первого крупномасштабного рок-фестиваля Woodstock Music & Art 
+			Fair (Вудсток). В моду входят песни о потустороннем, инопланетянах и пауках-мутантах. Элтон Джон выпускает свой хит «Goodbye 
+			Yellow Brick Road».
+			</font></p><p class="p_section"><font>
+			В середине семидесятых на фоне повального увлечения панк-роком группа Квин выпускает свой культовый альбом «Bohemian Rhapsody». 
+			Невероятное смешение рока и оперной музыки покорило сердца ценителей стиля. Рапсодия покоряла хит-парады и десятилетия спустя. 
+			Один из английских миллионеров предлагает титанам рок-н-ролла Леннону, Маккартни, Старру и Харрисону выступить под брендом 
+			Битлз. Но у фанатов уже появились новые кумиры. Переодетые под вампиров и прочую нечисть певцы с нестандартным поведением на 
+			сцене упорно укрепляли позиции панк-рока на сцене. Конец семидесятых и начало восьмидесятых ознаменовались уходом многих 
+			легенд классического рока.
+			</font></p><p class="p_section">
+			<img src="../images/rock_sektor_gaza.jpg" class="img_rock_sektor_gaza">
+			<font>После спада в развитии метал-музыки, связанного со вспышкой популярности панк-рока, в начале восьмидесятых в Британии началась 
+			новая волна британского хэви-метала. В Америке развитие традиционного панк-рока практически остановилось, поскольку панк-сцену 
+			полностью заняло экстремальное направление хардкор. В России такие группы как "Аквариум", "Кино", и "Сектор газа" стали 
+			настоящими звездами. Появились первые группы альтернативного рока, они совершали попытки совместить энергетику панк-рока, 
+			музыкальные основы постпанка, фолк-роковые гармонии и гитарные приёмы.
+			</font></p><p class="p_section"><font>
+			К началу девяностых годов рок-музыка оказалась в кризисе, уступая позиции поп-музыке. Но тем не менее она стала еще более 
+			разнообразной, с различными подстилями, направлениями и новыми звуками. Наиболее популярными жанрами в этот период были гранж, 
+			альтернативный рок, поп-панк, поп-рок и мэтал. В двухтысячных продолжилось развитие новых жанров и началось возрождение старых.
+			</font></p>
+		</section>
+		</div><p class="p_invisible">.</p>
+  <footer>
+	<p class="p_footer"><font>Курсовая работа по предмету "Веб-технологии"</font><br><font>Индивидуальная тема курсовой работы "Музыка"</font></p>
+  </footer>
+  </div>
+</body>
+
+</html>  
+ 

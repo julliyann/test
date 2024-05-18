@@ -1,0 +1,1006 @@
+body
+{
+	margin: 0px;
+}
+.div_left
+{
+	float: left;
+	width: 20%;
+}
+.div_right
+{
+	float: right;
+	width: 20%;
+}
+.div_center
+{
+	width: 60%;
+	margin-left: 20%;
+	background: #f9f9f9;
+}
+.div_main
+{
+	width: 100%;
+}
+.div_step_logo
+{ 
+	width: 20%;
+	float: left;
+	height: 1px;
+}
+.div_menu_search
+{ 
+	float: right;
+	width: 20%;
+}
+.div_step_menu
+{ 
+	width: 20%;
+	float: right;
+	height: 1px;
+}
+.div_menu
+{
+	width: 80%;
+	float: right;
+}
+.div_search_box
+{
+	width: 100%;
+	margin-top: 10%;
+	float: right;
+}
+.div_search
+{
+	width: 75%;
+	float: right;
+	margin-top: 1%;
+	border: solid 1px #ddd;
+	background: #fff;
+}
+header
+{
+	background-image: url('images/background.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+}
+.div_aside
+{
+	background-image: url('images/sidebar-tab.png');
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;
+	border: solid 1px #f9f9f9;
+}
+.div_article
+{
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	margin-top: 34%;
+	border: solid 1px #000;
+	box-sizing: border-box;
+}
+.img_logo
+{
+	width: 25%;
+	margin-top: 5%;
+	margin-bottom: 2.5%;	
+}
+.img_search
+{
+	float: right;
+	margin-top: 1%;
+	margin-right: 1%;
+	width: 7%;
+}
+.img_messenge 
+{
+	width: 15%;
+	margin-top: 5%;
+	margin-left: 3%;
+}
+.img_icon
+{
+	width: 10%;
+}
+.img_music
+{
+	width: 35%;
+	margin-left: 10%;
+	box-shadow: 1px 1px 2px 1px #aaa;
+}
+.img_rock
+{
+	width: 65%;
+	margin-right: 3%;
+	float: left;
+}
+.img_rock_elvis
+{
+	width: 45%;
+	margin-left: 3%;
+	float: right;
+}
+.img_rock_the_beatles
+{
+	width: 55%;
+	margin-right: 3%;
+	float: left;
+}
+.img_rock_sektor_gaza
+{
+	width: 45%;
+	margin-left: 3%;
+	float: right;
+}
+.img_rap
+{
+	width: 60%;
+	margin-right: 3%;
+	float: left;
+}
+.img_rap_disco
+{
+	width: 50%;
+	margin-right: 3%;
+	margin-top: 1%;
+	float: left;
+}
+.img_rap_dj
+{
+	width: 40%;
+	margin-left: 3%;
+	float: right;
+}
+.img_rap_red
+{
+	width: 50%;
+	margin-right: 3%;
+	float: left;
+}
+.img_rap_style
+{
+	width: 60%;
+	margin-left: 3%;
+	float: right;
+}
+.img_rap_gangster
+{
+	width: 45%;
+	margin-left: 3%;
+	float: right;
+}
+.img_jazz
+{
+	width: 60%;
+	margin-left: 3%;
+	float: right;
+}
+.img_jazz_beginning
+{
+	width: 50%;
+	margin-left: 3%;
+	float: right;
+}
+.img_jazz_new_orleans
+{
+	width: 50%;
+	margin-right: 3%;
+	float: left;	
+}
+.img_jazz_band
+{
+	width: 60%;
+	margin-right: 3%;
+	float: left;	
+}
+.img_jazz_musician
+{
+	width: 40%;
+	margin-left: 3%;
+	float: right;
+}
+.img_piano
+{
+	width: 50%;
+	margin-right: 3%;
+	float: left;
+}
+.img_piano_grand
+{
+	width: 40%;
+	margin-left: 3%;
+	margin-top: 1%;
+	float: right;
+}
+.img_piano_clavecin
+{
+	width: 30%;
+	margin-left: 3%;
+	float: right;
+}
+.img_piano_mechanism
+{
+	width: 40%;
+	margin-right: 3%;
+	float: left;
+}
+.img_piano_keys
+{
+	width: 30%;
+	margin-right: 3%;
+	float: left;
+}
+.img_piano_flex
+{
+	width: 30%;
+	margin-left: 3%;
+	float: right;	
+}
+.img_guitar
+{
+	width: 50%;
+	margin-left: 3%;
+	float: right;	
+}
+.img_guitar_kifara
+{
+	width: 25%;
+	margin-left: 3%;
+	margin-top: 1%;
+	float: right;	
+}
+.img_guitar_picture
+{
+	width: 45%;
+	margin-right: 3%;
+	float: left;
+}
+.img_guitar_acoustic 
+{
+	width: 50%;
+	margin-right: 3%;
+	margin-top: 1%;
+	float: left;
+}
+.img_guitar_electric
+{
+	width: 55%;
+	margin-left: 3%;
+	margin-top: 1%;
+	float: right;	
+}
+.p_menu
+{
+	text-align: center;
+	font-size: 9px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #888;
+}
+.p_menu_active
+{
+	text-align: center;
+	font-size: 9px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #000;
+}
+.p_search
+{
+	text-align: left;
+	margin-left: 1%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 9px;
+	font-family: Tahoma;
+	color: #888;
+}
+.p_nav
+{
+	text-align: center;
+	font-size: 12px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #888;
+}
+.p_nav_active
+{
+	text-align: center;
+	font-size: 12px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #28E3FF;
+}
+.p_invisible
+{
+	font-size: 1px;
+	font-family: Tahoma;
+	color: #f9f9f9;
+}
+.p_div_aside
+{
+	
+	font-size: 14px;
+	margin-left: 8%;
+	margin-top: 0.5%;
+	margin-bottom: 7%;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #000;
+}
+.p_aside
+{
+	font-family: Tahoma;
+	font-size: 10px;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	color: #888;
+	margin-left: 7%;
+}
+.p_div_article
+{
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #fff;
+	margin-left: 1%;
+	margin-bottom: 10%;
+}
+.p_div_article_h
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #fff;
+	margin-left: 1%;
+	font-weight: bolder;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.p_article_h
+{
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #000;
+	margin-left: 1%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	font-weight: bolder;
+}
+.p_article
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #888;
+	margin-left: 1%;
+	margin-right: 2%;
+	margin-top: 1%;
+	margin-bottom: 0%;
+	text-indent: 1%;
+	text-align: justify;
+}
+.p_section
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #000;
+	margin-left: 3%;
+	margin-right: 5%;
+	margin-top: 0%;
+	margin-bottom: 1%;
+	text-indent: 5%;
+	text-align: justify;
+}
+.p_footer
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #ddd;
+	text-align: center;
+}
+.a_email
+{
+	text-decoration: none;
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #888;
+}
+.a_aside
+{
+	text-decoration: none;
+}
+.hr_aside
+{
+	width: 87%;
+	margin-left: 7%;
+	border: 1px dashed #ccc;
+}
+.hr_nav_news
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #28E3FF,
+  #28E3FF 10%,
+  #888 10%);
+
+}
+.hr_nav_rock
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #28E3FF,
+  #28E3FF 6%,
+  #888 6%);
+
+}
+.hr_nav_rap
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #888,
+  #888 6%,
+  #28E3FF 6%,
+  #28E3FF 12%,
+  #888 12%);
+}
+.hr_nav_jazz
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #888,
+  #888 12%,
+  #28E3FF 12%,
+  #28E3FF 20%,
+  #888 20%);
+
+}
+.hr_nav_piano
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #28E3FF,
+  #28E3FF 14%,
+  #888 14%);
+
+}
+.hr_nav_guitar
+{
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: linear-gradient(
+  to right, 
+  #888,
+  #888 14%,
+  #28E3FF 14%,
+  #28E3FF 23%,
+  #888 23%);
+
+}
+.menu_main
+{
+	background: linear-gradient(#fff, #eee);
+	width: 30%;
+	float: left;
+	border-bottom: solid 3px #eee;
+}
+.menu_main_active
+{
+	background: linear-gradient(#eee, #fff);
+	width: 30%;
+	border-bottom: solid 3px #28E3FF;
+	float: left;
+}
+.menu_genre
+{
+	background: linear-gradient(#fff, #eee);
+	width: 25%;
+	float: left;
+	border-bottom: solid 3px #eee;
+}
+.menu_genre_active
+{
+	background: linear-gradient(#eee, #fff);
+	width: 25%;
+	border-bottom: solid 3px #28E3FF;
+	float: left;
+}	
+.menu_instrument
+{
+	background: linear-gradient(#fff, #eee);
+	width: 45%;
+	float: left;
+	border-bottom: solid 3px #eee;
+}	
+.menu_instrument_active
+{
+	background: linear-gradient(#eee, #fff);
+	width: 45%;
+	border-bottom: solid 3px #28E3FF;
+	float: left;
+}
+.nav_news
+{
+	background: linear-gradient(#fff, #eee);
+	width: 10%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_rock_rap
+{
+	background: linear-gradient(#eee, #fff);
+	width: 6%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_rock_rap_active
+{
+	background: linear-gradient(#fff, #eee);
+	width: 6%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_jazz
+{
+	background: linear-gradient(#eee, #fff);
+	width: 8%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_jazz_active
+{
+	background: linear-gradient(#fff, #eee);
+	width: 8%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_piano
+{
+	background: linear-gradient(#eee, #fff);
+	width: 14%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_piano_active
+{
+	background: linear-gradient(#fff, #eee);
+	width: 14%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_guitar
+{
+	background: linear-gradient(#eee, #fff);
+	width: 9%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+.nav_guitar_active
+{
+	background: linear-gradient(#fff, #eee);
+	width: 9%;
+	border-top: solid 1px #eee;
+	float: left;
+}
+nav
+{
+	background: linear-gradient(#eee, #fff);
+	width: 100%;
+	float: left;
+}
+aside
+{
+	float: left;
+	width: 35%;
+}
+section
+{
+	float: left;
+	width: 65%;
+	margin-bottom: 2%;
+	margin-top: 2%;
+}
+article
+{
+	width: 94%;
+	margin-left: 3%;
+	margin-bottom: 5%;
+	border-bottom: solid 3px #eee;
+}
+.article_img_1
+{
+	background-image: url('images/masca.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+	border: solid 1px #f9f9f9;
+	background-repeat: no-repeat;
+}
+.article_img_2
+{
+	background-image: url('images/Eurovision.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+	border: solid 1px #f9f9f9;
+	background-repeat: no-repeat;
+}
+.article_img_3
+{
+	background-image: url('images/skz.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+	border: solid 1px #f9f9f9;
+	background-repeat: no-repeat;
+}
+.article_img_4
+{
+	background-image: url('images/zharaawards.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+	border: solid 1px #f9f9f9;
+	background-repeat: no-repeat;
+}
+footer
+{
+	width: 100%;
+	background: #525250;
+	border: solid 1px #525250;
+}
+.limiter
+{
+  max-height: 0px;
+  overflow: hidden;
+}
+.read-more-checker_1
+{
+  opacity: 0;
+  position: absolute;
+}
+.read-more-checker_1:checked ~ .limiter 
+{
+  max-height: none;
+}
+.read-more-checker_1 ~ .read-more-button_1:before 
+{
+  content: "Читать полностью »";
+}
+.read-more-checker_1:checked ~ .read-more-button_1:before 
+{
+  content: "Свернуть «";
+}
+.read-more-button_1
+{
+  cursor: pointer;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  margin-left: 1%;
+  color: #eee;
+  font-family: Tahoma;
+  background: #525250;
+  border: solid 2px #525250;
+  border-left: solid 5px #525250;
+  border-right: solid 5px #525250;
+  font-size: 12px;
+}
+.read-more-checker_2
+{
+  opacity: 0;
+  position: absolute;
+}
+.read-more-checker_2:checked ~ .limiter 
+{
+  max-height: none;
+}
+.read-more-checker_2 ~ .read-more-button_2:before 
+{
+  content: "Читать полностью »";
+}
+.read-more-checker_2:checked ~ .read-more-button_2:before 
+{
+  content: "Свернуть «";
+}
+.read-more-button_2
+{
+  cursor: pointer;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  margin-left: 1%;
+  color: #eee;
+  font-family: Tahoma;
+  background: #525250;
+  border: solid 2px #525250;
+  border-left: solid 5px #525250;
+  border-right: solid 5px #525250;
+  font-size: 12px;
+}
+.read-more-checker_3
+{
+  opacity: 0;
+  position: absolute;
+}
+.read-more-checker_3:checked ~ .limiter 
+{
+  max-height: none;
+}
+.read-more-checker_3 ~ .read-more-button_3:before 
+{
+  content: "Читать полностью »";
+}
+.read-more-checker_3:checked ~ .read-more-button_3:before 
+{
+  content: "Свернуть «";
+}
+.read-more-button_3
+{
+  cursor: pointer;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  margin-left: 1%;
+  color: #eee;
+  font-family: Tahoma;
+  background: #525250;
+  border: solid 2px #525250;
+  border-left: solid 5px #525250;
+  border-right: solid 5px #525250;
+  font-size: 12px;
+}
+.read-more-checker_4
+{
+  opacity: 0;
+  position: absolute;
+}
+.read-more-checker_4:checked ~ .limiter 
+{
+  max-height: none;
+}
+.read-more-checker_4 ~ .read-more-button_4:before 
+{
+  content: "Читать полностью »";
+}
+.read-more-checker_4:checked ~ .read-more-button_4:before 
+{
+  content: "Свернуть «";
+}
+.read-more-button_4
+{
+  cursor: pointer;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  margin-left: 1%;
+  color: #eee;
+  font-family: Tahoma;
+  background: #525250;
+  border: solid 2px #525250;
+  border-left: solid 5px #525250;
+  border-right: solid 5px #525250;
+  font-size: 12px;
+}
+.today 
+{
+	background: #eee;
+	text-shadow: 0px 0px 1px #000;
+}
+td
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #888;
+	text-align: center;
+}
+.monthYear
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #888;
+	text-align: center;
+	margin-bottom: 2%;
+}
+table
+{
+	width: 90%;
+	margin-left: 5%;
+}
+@media (max-width: 1000px)
+{
+.div_left
+{
+	float: left;
+	width: 1%;
+}
+.div_right
+{
+	float: right;
+	width: 1%;
+}
+.div_center
+{
+	width: 98%;
+	margin-left: 1%;
+	background: #f9f9f9;
+}	
+.div_step_logo
+{ 
+	width: 15%;
+	float: left;
+	height: 1px;
+}
+.div_menu_search
+{ 
+	float: right;
+	width: 40%;
+}
+.div_step_menu
+{ 
+	width: 1%;
+	float: right;
+	height: 1px;
+}
+header
+{
+	background-image: url('images/background_mini.jpg');
+	background-size: 100%;
+	background-position: center;
+	width: 100%;
+}
+.img_logo
+{
+	width: 25%;
+	margin-top: 6%;
+	margin-bottom: 3%;	
+}
+.p_menu
+{
+	text-align: center;
+	font-size: 13px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #888;
+}
+.p_menu_active
+{
+	text-align: center;
+	font-size: 13px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #000;
+}
+.p_nav
+{
+	text-align: center;
+	font-size: 16px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #888;
+}
+.p_nav_active
+{
+	text-align: center;
+	font-size: 16px;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #28E3FF;
+}
+.p_div_aside
+{
+	
+	font-size: 18px;
+	margin-left: 8%;
+	margin-top: 0.5%;
+	margin-bottom: 7%;
+	font-family: Tahoma;
+	font-weight: bolder;
+	color: #000;
+}
+.p_aside
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	color: #888;
+	margin-left: 7%;
+}
+.p_div_article
+{
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #fff;
+	margin-left: 1%;
+	margin-bottom: 10%;
+}
+.p_div_article_h
+{
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #fff;
+	margin-left: 1%;
+	font-weight: bolder;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+.p_article_h
+{
+	font-family: Tahoma;
+	font-size: 20px;
+	color: #000;
+	margin-left: 1%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	font-weight: bolder;
+}
+.p_article
+{
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #888;
+	margin-left: 1%;
+	margin-top: 2%;
+	margin-bottom: 0%;
+}
+.p_section
+{
+	font-family: Tahoma;
+	font-size: 18px;
+	color: #000;
+	margin-left: 3%;
+	margin-right: 5%;
+	margin-top: 0%;
+	margin-bottom: 1%;
+	text-indent: 5%;
+	text-align: justify;
+}
+.p_footer
+{
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #ddd;
+	text-align: center;
+}
+.a_email
+{
+	text-decoration: none;
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #888;
+}
+td
+{
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #888;
+	text-align: center;
+}
+.monthYear
+{
+	font-family: Tahoma;
+	font-size: 18px;
+	color: #888;
+	text-align: center;
+	margin-bottom: 2%;
+}
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<title>Музыка</title>
+</head>
+
+<body>
+  <header>
+	<div class="div_step_logo"></div>
+	<img src="../images/logo.png" class="img_logo">
+	<div class="div_step_menu"></div>
+	<div class="div_menu_search">
+		<div class="div_menu">
+			<a href="../index.html"><div class="menu_main"><p class="p_menu">Главные новости</p></div></a>
+			<a href="rock.html"><div class="menu_genre"><p class="p_menu">Жанры музыки</p></div></a>
+			<a href="piano.html"><div class="menu_instrument_active"><p class="p_menu_active">Музыкальные инструменты</p></div></a>
+		</div>  
+		<div class="div_search_box">
+			<img src="../images/rss.png" class="img_icon">
+			<img src="../images/twitter.png" class="img_icon">
+			<div class="div_search"><img src="../images/search.gif" class="img_search"><p class="p_search"><font>Поиск</font></p></div>
+		</div>
+	</div>
+  </header>
+  <div class="div_left"></div>
+  <div class="div_right"></div>
+  <div class="div_center">
+		<nav>
+		<a href="piano.html"><div class="nav_piano_active"><p class="p_nav_active">Фортепиано</p></div></a>
+		<a href="guitar.html"><div class="nav_guitar"><p class="p_nav">Гитара</p></div></a>
+		</nav>
+		<hr class="hr_nav_piano">
+		<div class="div_main">
+		<aside>
+			<img src="../images/vk.png" class="img_messenge"> 
+			<img src="../images/tg.png" class="img_messenge">
+			<img src="../images/tt.png" class="img_messenge">	
+			<img src="../images/ds.png" class="img_messenge">	
+			<img src="../images/sc.png" class="img_messenge">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка в Донецке</font></p></div>
+			<a href="https://filarmonia-donetsk.ru" target="_blank"><img src="../images/philharmonic.png" class="img_music"></a>
+			<a href="https://donbassopera.ru" target="_blank"><img src="../images/opera.png" class="img_music"></a>
+			<div class="div_aside"><p class="p_div_aside"><font>Музыкальные платформы</font></p></div>
+			<a href="https://vk.com/vkmusic" target="_blank" class="a_aside"><p class="p_aside"><font>VK Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.yandex.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Яндекс Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://m.ok.ru/okmusic" target="_blank" class="a_aside"><p class="p_aside"><font>Музыка в ОК</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.mts.ru" target="_blank" class="a_aside"><p class="p_aside"><font>МТС Music</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка на ТВ</font></p></div>
+			<a href="https://muz-tv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Муз-ТВ</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://tntmusic.ru" target="_blank" class="a_aside"><p class="p_aside"><font>ТНТ Music</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://musicboxtv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Music Box Russia</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Данные автора</font></p></div>
+			<p class="p_aside"><font>Пилипенко Юлия Александровна</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Группа ИС-23а</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Почта: <a class="a_email" href="mailto:julliyann@yandex.ru">julliyann@yandex.ru</a></font></p>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Календарь</font></p></div>
+			<div id="monthYear" class="monthYear"></div>
+				<table id="calendar">
+                <thead>
+                <tr>
+                <td>Пн</td>
+                <td>Вт</td>
+                <td>Ср</td>
+                <td>Чт</td>
+                <td>Пт</td>
+                <td>Сб</td>
+                <td>Вс</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+				<script>
+                function Calendar(id, year, month){
+				var Dlast = new Date(year, month + 1, 0).getDate(),
+				D = new Date(year, month, Dlast),
+				DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+				DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+				calendar = "<tr>";
+				
+				if (DNfirst != 0) {for (var i = 1; i < DNfirst; i++) calendar += "<td>";}
+				else {for (var i = 0; i < 6; i++) calendar += "<td>";}
+				var today = new Date();
+
+				for (var i = 1; i <= Dlast; i++) 
+				{
+					var currentDay = new Date(D.getFullYear(), D.getMonth(), i).getDay();
+					var classes = ['day'];
+
+					if (i == today.getDate() && D.getFullYear() == today.getFullYear() && D.getMonth() == today.getMonth()) 
+					{classes.push('today');}
+
+					calendar += '<td class="' + classes.join(' ') + '">' + i + '</td>';
+
+					if (currentDay == 0) {calendar += "<tr>";}
+				}
+
+				for (var i = DNlast; i < 7; i++) calendar += "<td>&nbsp;";
+				document.querySelector("#" + id + " tbody").innerHTML = calendar;
+				document.getElementById("monthYear").innerHTML =
+					D.toLocaleString("ru-RU", { month: "long" }).charAt(0).toUpperCase() +
+					D.toLocaleString("ru-RU", { month: "long" }).slice(1) +
+					" " + D.getFullYear();
+                </script>
+		</aside>
+		<section>
+			<p class="p_section">
+			<img src="../images/piano.jpeg" class="img_piano">
+			<font>Фортепиано является одним из самых популярных музыкальных инструментов. Это струнный ударно-клавишный музыкальный 
+			инструмент, название которого произошло от итальянских слов forte – громко, piano – тихо. Фортепиано имеет два основных типа 
+			инструментов: с горизонтальным расположением струн (рояль) и вертикальным (пианино).
+			</font></p><p class="p_section"><font>
+			В рояле струны, вся механика и дека (резонирующая поверхность) размещены горизонтально, поэтому он имеет весьма внушительные 
+			размеры, а по форме напоминает птичье крыло. Его важная особенность – открывающаяся крышка (когда она открыта, усиливается 
+			<img src="../images/piano_grand.jpg" class="img_piano_grand">
+			мощность звука). Рояль –  для концертных залов, так как имеет более насыщенное звучание. Слово «рояль» в переводе с 
+			французского означает - «королевский». Ни один дворцовый бал не обходился без использования этого инструмента. Пианино 
+			предназначено для домашнего музицирования или небольших по объёму помещений. Для него характерно вертикальное расположение 
+			механизмов, за счёт чего, оно имеет большую высоту, чем рояль, вытянутую форму и прислоняется вплотную к стене комнаты. 
+			Габариты пианино намного меньше, чем у рояля – средняя ширина достигает 1.5 м., а глубина – порядка 60 см.
+			</font></p><p class="p_section"><font>
+			Предшественниками фортепиано являлись клавесины и изобретённые позднее клавикорды. Клавесин был придуман в Италии в XV веке. 
+			Звук извлекался за счёт того, что при нажатии на клавишу поднимался стерженёк (толкачик), после чего плектр «защипывал» струну. 
+			Недостаток клавесина в том, что нельзя менять громкость, и музыка звучит недостаточно динамично. Клавикорд (в переводе с 
+			латыни – «клавиша и струна»). Широко использовался в XV-XVIII вв. Звук возникал за счёт удара тангента (штифт из металла в 
+			задней части клавиши) по струне. Громкость звука регулировалась силой нажатия на клавишу. Минусом клавикорда является быстро 
+			затихающий звук.
+			</font></p><p class="p_section">
+			<img src="../images/piano_clavecin.jpeg" class="img_piano_clavecin">
+			<font>Изобрёл фортепиано итальянский клавесинный мастер Бартоломео Кристофори (1655-1731), с 1698 г. работавший над созданием 
+			молоточкового механизма для клавесина (официальная дата – около 1709 г.). В 1711 г. механизм был подробно описан Сципионом 
+			Маффеи в венецианском журнале «Giornale dei letterati d’Italia». Инструмент был назван «gravicembalo col piano e forte» 
+			(клавесин с тихим и громким звуком) или пианофорте, а впоследствии закрепилось название фортепиано. Пианино — по-итальянски 
+			pianino переводится как «маленькое фортепиано». Американец Дж. Хокинс изобрел первое в мире пианино в 1800 году. В 1801 году 
+			похожую конструкцию, но уже с педалями, придумал М. Мюллер из Австралии. В России производство фортепиано связано с 
+			деятельностью мастеров Тишнера и Вирты в 1818-1820 годах.
+			</font></p><p class="p_section"><font>
+			Фортепиано по праву называют королем музыкальных инструментов. Причин этому много, но главная заключается в диапазоне 
+			инструмента. Фортепиано охватывает весь спектр звучания инструментов оркестра, от самой низкой ноты басового фагота и до 
+			верхней ноты флейты-пикколо.
+			</font></p><p class="p_section"><font>
+			<img src="../images/piano_mechanism.jpg" class="img_piano_mechanism">
+			<font>Рояль и пианино имеют общую схему, хотя расположены детали по-разному. На раму из чугуна при помощи колков натягиваются струны, 
+			которые пересекают дискантовый и басовый штеги (они усиливают струнные колебания), прикреплённые к деревянному щиту под 
+			струнами (резонансной деке); в нижнем регистре действует 1 струна, а в среднем и высоком – «хор» из 2-3 струн.
+			</font></p><p class="p_section"><font>
+			Когда пианист нажимает на клавишу, от струны отходит демпфер (глушитель), позволяя ей свободно звучать, после чего по нему 
+			бьёт молоточек. Так извлекается звук на фортепиано. Когда на инструменте не играют, струны (кроме крайних октав) прижимаются 
+			к демпферу.
+			</font></p><p class="p_section"><font>
+			На пианино обычно установлены две педали, а на рояль – три. При нажатии на первую педаль поднимаются все демпферы, и 
+			определённые струны звучат при отпущенных клавишах, а другие начинают вибрировать. Так удаётся добиться непрерывного звука и 
+			дополнительных обертонов. Левая педаль делает звук приглушённым и ослабляет его, используется редко. Третья педаль есть только 
+			на рояле, её задача – блокировать определённые демпферы, чтобы они оставались поднятыми до снятия педали. За счёт этого можно 
+			сохранять один аккорд, играя другие ноты.
+			</font></p><p class="p_section">
+			<img src="../images/piano_keys.jpg" class="img_piano_keys">
+			<font>Все виды фортепиано имеют 88 клавиш, 52 из которых белые, а остальные 36 – чёрные. Стандартный диапазон этого музыкального 
+			инструмента – от ноты ля субконтроктавы до ноты до в пятой октаве. Пианино и рояль очень универсальны, и на них можно сыграть 
+			практически любую мелодию. Они подходят как для сольных произведений, так и для совместной работы с оркестром.
+			</font></p><p class="p_section"><font>
+			В настоящее время появились принципиально новые инструменты – электронные пианино, рояли, синтезаторы и даже гибкие пианино. 
+			Синтезаторы и цифровые фортепиано — компактные альтернативы большим акустическим инструментам. Цифровые модели неплохо звучат,
+			<img src="../images/piano_flex.jpg" class="img_piano_flex">
+			а их клавиши уже давно способны дарить практически те же ощущения от игры, что и клавиши акустических аналогов. Гибкое пианино, 
+			конечно, не сравнится со своими акустическими и цифровыми собратьями, так как у него нет того ощущения прикосновения к клавишам 
+			и глубины звукоизвлечения. Но с его помощью можно учить сольфеджио и главным достоинством гибкого пианино является его 
+			мобильность, которая позволяет брать пианино туда, где недоступно традиционное фортепиано (на дачу, в деревню, в поездку на 
+			море).
+			</font></p><p class="p_section"><font>
+			Фортепиано – удивительный по своим безграничным возможностям инструмент. Он используется для многих задач в музыке. На нём 
+			исполняют сольные произведения, играют концерты для фортепиано с оркестром. Часто пианист выступает в роли аккомпаниатора 
+			(концертмейстера) другим инструментам таким как скрипка, балалайка, домра, флейта и для сопровождения пения. Игра на 
+			фортепиано – занятие, требующее многолетних тренировок, внимания и самоотдачи.
+			</font></p>
+		</section>
+		</div><p class="p_invisible">.</p>
+  <footer>
+	<p class="p_footer"><font>Курсовая работа по предмету "Веб-технологии"</font><br><font>Индивидуальная тема курсовой работы "Музыка"</font></p>
+  </footer>
+  </div>
+</body>
+
+</html>  
+ 

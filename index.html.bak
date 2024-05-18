@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Музыка</title>
+</head>
+
+<body>
+  <header>
+	<div class="div_step_logo"></div>
+	<img src="images/logo.png" class="img_logo">
+	<div class="div_step_menu"></div>
+	<div class="div_menu_search">
+		<div class="div_menu">
+			<a href="index.html"><div class="menu_main_active"><p class="p_menu_active">Главные новости</p></div></a>
+			<a href="pages/rock.html"><div class="menu_genre"><p class="p_menu">Жанры музыки</p></div></a>
+			<a href="pages/piano.html"><div class="menu_instrument"><p class="p_menu">Музыкальные инструменты</p></div></a>
+		</div>  
+		<div class="div_search_box">
+			<img src="images/rss.png" class="img_icon">
+			<img src="images/twitter.png" class="img_icon">
+			<div class="div_search"><img src="images/search.gif" class="img_search"><p class="p_search"><font>Поиск</font></p></div>
+		</div>
+	</div>
+  </header>
+  <div class="div_left"></div>
+  <div class="div_right"></div>
+  <div class="div_center">
+		<nav><a href="index.html"><div class="nav_news"><p class="p_nav_active">Новости</p></div></a></nav>
+		<hr class="hr_nav_news">
+		<div class="div_main">
+		<aside>
+			<img src="images/vk.png" class="img_messenge"> 
+			<img src="images/tg.png" class="img_messenge">
+			<img src="images/tt.png" class="img_messenge">	
+			<img src="images/ds.png" class="img_messenge">	
+			<img src="images/sc.png" class="img_messenge">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка в Донецке</font></p></div>
+			<a href="https://filarmonia-donetsk.ru" target="_blank"><img src="images/philharmonic.png" class="img_music"></a>
+			<a href="https://donbassopera.ru" target="_blank"><img src="images/opera.png" class="img_music"></a>
+			<div class="div_aside"><p class="p_div_aside"><font>Музыкальные платформы</font></p></div>
+			<a href="https://vk.com/vkmusic" target="_blank" class="a_aside"><p class="p_aside"><font>VK Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.yandex.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Яндекс Музыка</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://m.ok.ru/okmusic" target="_blank" class="a_aside"><p class="p_aside"><font>Музыка в ОК</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://music.mts.ru" target="_blank" class="a_aside"><p class="p_aside"><font>МТС Music</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Музыка на ТВ</font></p></div>
+			<a href="https://muz-tv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Муз-ТВ</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://tntmusic.ru" target="_blank" class="a_aside"><p class="p_aside"><font>ТНТ Music</font></p></a>
+			<hr class="hr_aside">
+			<a href="https://musicboxtv.ru" target="_blank" class="a_aside"><p class="p_aside"><font>Music Box Russia</font></p></a>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Данные автора</font></p></div>
+			<p class="p_aside"><font>Пилипенко Юлия Александровна</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Группа ИС-23а</font></p>
+			<hr class="hr_aside">
+			<p class="p_aside"><font>Почта: <a class="a_email" href="mailto:julliyann@yandex.ru">julliyann@yandex.ru</a></font></p>
+			<hr class="hr_aside">
+			<div class="div_aside"><p class="p_div_aside"><font>Календарь</font></p></div>
+			<div id="monthYear" class="monthYear"></div>
+				<table id="calendar">
+                <thead>
+                <tr>
+                <td>Пн</td>
+                <td>Вт</td>
+                <td>Ср</td>
+                <td>Чт</td>
+                <td>Пт</td>
+                <td>Сб</td>
+                <td>Вс</td>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+				<script>
+                function Calendar(id, year, month){
+				var Dlast = new Date(year, month + 1, 0).getDate(),
+				D = new Date(year, month, Dlast),
+				DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+				DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+				calendar = "<tr>";
+				
+				if (DNfirst != 0) {for (var i = 1; i < DNfirst; i++) calendar += "<td>";}
+				else {for (var i = 0; i < 6; i++) calendar += "<td>";}
+				var today = new Date();
+
+				for (var i = 1; i <= Dlast; i++) 
+				{
+					var currentDay = new Date(D.getFullYear(), D.getMonth(), i).getDay();
+					var classes = ['day'];
+
+					if (i == today.getDate() && D.getFullYear() == today.getFullYear() && D.getMonth() == today.getMonth()) 
+					{classes.push('today');}
+
+					calendar += '<td class="' + classes.join(' ') + '">' + i + '</td>';
+
+					if (currentDay == 0) {calendar += "<tr>";}
+				}
+
+				for (var i = DNlast; i < 7; i++) calendar += "<td>&nbsp;";
+				document.querySelector("#" + id + " tbody").innerHTML = calendar;
+				document.getElementById("monthYear").innerHTML =
+					D.toLocaleString("ru-RU", { month: "long" }).charAt(0).toUpperCase() +
+					D.toLocaleString("ru-RU", { month: "long" }).slice(1) +
+					" " + D.getFullYear();
+}
+
+Calendar("calendar", new Date().getFullYear(), new Date().getMonth());
+                </script>
+		</aside>
+		<section>
+			<article>
+				<div class="article_img_4">
+					<div class="div_article">
+						<p class="p_div_article_h"><font>Жара Music Awards 2024: кто победил в номинациях?</font></p>
+						<p class="p_div_article"><font>
+						В Москве в седьмой раз проходит музыкальная премия «Жара Music Awards» - премию получат те, кто достиг 
+						музыкальных высот по итогам 2023 года.</font></p>
+					</div>
+				</div>
+				<p class="p_article"><font>14 мая 2024</font></p>
+				<p class="p_article_h"><font>Жара Music Awards 2024</font></p>
+				<p class="p_article"><font>
+				«ЖАРА Music Awards» — российская музыкальная премия, вручаемая телеканалом «ЖАРА TV» с 2018 года. 
+				Победителей музыкальной премии выбирают открытым голосованием.</font></p>
+				<input type="checkbox" class="read-more-checker_4" id="read-more-checker_4">
+				<div class="limiter">
+				<p class="p_article"><font>«Прорыв года» - MONA</font></p>
+				<p class="p_article"><font>«Альбом года» - Сергей Лазарев</font></p>
+				<p class="p_article"><font>«Легенда поп-культуры» - Ани Лорак</font></p>
+				<p class="p_article"><font>«Артист 10-летия» - Егор Крид</font></p>
+				<p class="p_article"><font>«Песня года» — Инстасамка</font></p>
+				<p class="p_article"><font>«Best стриминг» —Gayazovs Brothers</font></p>
+				<p class="p_article"><font>«Группа года» — Артик и Асти</font></p>
+				<p class="p_article"><font>«Хитмейкер года» — JONY (Джони)</font></p>
+				<p class="p_article"><font>«Двадцать лет в эфире» — Ольга Бузова</font></p>
+				<p class="p_article"><font>«Радио Хит года» — Bahh Tee и Turken</font></p>
+				<p class="p_article"><font>«Связь поколений» — Акмаль и Юлианна Караулова</font></p>
+				<p class="p_article"><font>«Видео года» — Дима Билан с клипом "Острой бритвой"</font></p>
+				<p class="p_article"><font>«Вклад в искусство» — Николай Басков</font></p>
+				<p class="p_article"><font>«Фан-клуб года» — Клава Кока</font></p>
+				<p class="p_article"><font>«Коллаборация года» — Niletto, Олег Майями и Леша Свик</font></p>
+				<p class="p_article"><font>«Певец года» — Мот</font></p>
+				<p class="p_article"><font>«Певица года» — Люся Чеботина</font></p>
+				<p class="p_article"><font>«Артист года» — Анна Асти</font></p>
+				<p class="p_article"><font>«Звезда Авторадио» — Леонид Агутин</font></p>
+				<p class="p_article"><font>«Артист поколений» — Валерия</font></p>
+				<p class="p_article"><font>«Digital артист» - Хабиб</font></p>
+				<p class="p_article"><font>«Вне времени» - Амирчик</font></p>
+				<p class="p_article"><font>«Шоу года» - Полина Гагарина</font></p>
+				<p class="p_article"><font>«Выбор VOICE» - Мари Краймбрери</font></p>
+				</div><label for="read-more-checker_4" class="read-more-button_4"></label>
+			</article>
+			<article>
+				<div class="article_img_3">
+					<div class="div_article">
+						<p class="p_div_article_h"><font>Возвращение на сцену</font></p>
+						<p class="p_div_article"><font>
+						После долгого перерыва Stray Kids выпустили Digital Single совместно с
+						американским певецом Чарли Путом</font></p>				
+					</div>
+				</div>
+				<p class="p_article"><font>13 мая 2024</font></p>
+				<p class="p_article_h"><font> Lose My Breath</font></p>
+				<p class="p_article"><font>
+				10 мая вышла новая песня Stray Kids «Lose My Breath (Feat. Charlie Puth)»</font></p>
+				<input type="checkbox" class="read-more-checker_3" id="read-more-checker_3">
+				<div class="limiter">
+				<p class="p_article"><font>
+				Эта песня стала чем-то новым для артистов, благодаря ней, они смогли по-новому 
+				раскрыть свои голоса и показать, на что они способны.</font></p>
+				<p class="p_article"><font>
+				Песня была написана в июле прошлого года. Это новый жанр и подобного ещё не было в дискографии Stray Kids. 
+				Сами артисты говорили, что при первом прослушивании они не были уверены, что смогут реализовать подобное, 
+				однако позже смогли передать все эмоции и любовь, о которой поётся в песне.</font></p>
+				<p class="p_article"><font>
+				Клип к песне снимался зимой, без участия Чарли Пута. Концепт клипа – сказка «Русалочка». Фанаты уже построили 
+				множество теорий, что могло там происходить. Кто русалка, а кто человек? Что за огни в небе, и куда они зовут? 
+				Сколько ещё тайн не раскрыто.</font></p>
+				<p class="p_article"><font>
+				Спустя два для после выхода песни вышли две ремикс-версии, что стало приятным бонусом. Теперь фанаты могут 
+				наслаждаться не одной, а целыми тремя потрясающими песнями. Послушать данные песни можно на ютубе и других 
+				музыкальных площадках.
+				</font></p>
+				</div><label for="read-more-checker_3" class="read-more-button_3"></label>
+			</article>
+			<article>
+				<div class="article_img_2">
+					<div class="div_article">
+						<p class="p_div_article_h"><font>Евровидение</font></p>
+						<p class="p_div_article"><font>68-й конкурс песни «Евровидение», прошёл в Мальмё (Швеция).</font></p>				
+					</div>
+				</div>
+				<p class="p_article"><font>12 мая 2024</font></p>
+				<p class="p_article_h"><font>Евровидение-2024</font></p>
+				<p class="p_article"><font>
+				Песенный конкурс «Евровидение» — конкурс эстрадной песни среди стран — членов Европейского вещательного союза.
+				</font></p>
+				<input type="checkbox" class="read-more-checker_2" id="read-more-checker_2">
+				<div class="limiter">
+				<p class="p_article"><font>
+				68-й конкурс песни «Евровидение», прошедший в Мальмё (Швеция), благодаря победе Лорин с песней «Tattoo» 
+				на конкурсе предыдущего года, проходившем в Ливерпуле, Великобритания.</font></p>
+				<p class="p_article"><font>
+				Первый и второй полуфиналы состоялись 7 и 9 мая, а финал — 11 мая 2024 года.</font></p>
+				<p class="p_article"><font>
+				Победителем конкурса стала Швейцария, которую представлял певец Nemo с песней «The Code». Второе место занял 
+				представитель Хорватии исполнитель Baby Lasagna с песней «Rim Tim Tagi Dim». Третье место заняли представительницы 
+				Украины — Alyona Alyona и Jerry Heil, исполнившие песню «Teresa & Maria».
+				</font></p>
+				</div><label for="read-more-checker_2" class="read-more-button_2"></label>
+			</article>
+			<article>
+				<div class="article_img_1">
+					<div class="div_article">
+						<p class="p_div_article_h"><font>Долгожданный финал</font></p>
+						<p class="p_div_article"><font>
+						5 юбилейный сезон завершился грандиозным финалом, на котором были объявлены 
+						победители и раскрыты все маски</font></p>				
+					</div>
+				</div>
+				<p class="p_article"><font>6 мая 2024</font></p>
+				<p class="p_article_h"><font>Финал шоу Маска</font></p>
+				<p class="p_article"><font>5 мая прошёл финал шоу Маска на канале НТВ. До него дошли Змей Горыныч, Кот, Енот и Бабочка.</font></p>
+				<input type="checkbox" class="read-more-checker_1" id="read-more-checker_1">
+				<div class="limiter">
+				<p class="p_article"><font>
+				Все участники были очень сильны и несомненно заслуживали награды, но победитель только один.</font></p>
+				<p class="p_article"><font>
+				По итогам первого голосования жюри 4 место занял Змей Горыныч. Под маской, а точнее под масками, как и 
+				предполагали все с самого начала, оказались юмористы из Comedy Club Дмитрий Сорокин, Зураб Матуа и Андрей Аверин.</font></p>
+				<p class="p_article"><font>
+				По итогам второго голосования 3 место досталось Бабочке. Под столь прекрасной маской скрывалась знаменитая певица 
+				Люся Чеботина, она смогла скрывать свой голос, и некоторые судьи до последнего не верили, что там скрывается она.</font></p>
+				<p class="p_article"><font>
+				2 место в ходе сложнейшего голосования досталось Коту, в костюме которого скрывалась Ани Лорак.</font></p>
+				<p class="p_article"><font>
+				И победителем сезона стал Енот, чья личность оставалась загадкой до самого конца. Под маской 
+				скрывалась талантливейшая певица Севиль из группы Artik & Asti.
+				</font></p>
+				</div><label for="read-more-checker_1" class="read-more-button_1"></label>
+			</article>
+		</section>
+		</div><p class="p_invisible">.</p>
+  <footer>
+	<p class="p_footer"><font>Курсовая работа по предмету "Веб-технологии"</font><br><font>Индивидуальная тема курсовой работы "Музыка"</font></p>
+  </footer>
+  </div>
+</body>
+
+</html>  
+ 
